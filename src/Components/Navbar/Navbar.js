@@ -18,14 +18,14 @@ const Navbar = () => {
         <h2 className='text-xl font-semibold'>This is Logo</h2>
       </div>
       {/*--------menus--------*/}
-      <ul className={`md:flex justify-center absolute left-[50%] px-12 pb-4 ease-in duration-300 ${open? 'top-[-120px] ': 'top-6 '}  md:static bg-slate-300`}>
-        {
-          navMenus.map(menu => <Nav key={menu.id} menus ={menu}/>)
-        }
-      </ul>
       {/* ---------togolle-bar--------- */}
-      <div className='md:hidden'>
-        <button onClick={() => setOpen(!open)}>
+      <div>
+        <ul className={`md:flex justify-center absolute left-[50%] px-12 pb-4 ease-in duration-300 ${open? 'top-[-120px] ': 'top-6 w-ful'}  md:static bg-slate-300`}>
+          {
+            navMenus.map(menu => <Nav key={menu.id} menus ={menu}/>)
+          }
+        </ul>
+        <button onClick={() => setOpen(!open)} className='md:hidden'>
           {
             open? <Bars3Icon className="h-7 w-8"/>
             : <XMarkIcon className='h-7 w-7'/>
