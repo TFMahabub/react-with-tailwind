@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Nav from './Nav';
-import { Bars3Icon, BeakerIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
@@ -20,7 +20,7 @@ const Navbar = () => {
       {/*--------menus--------*/}
       {/* ---------togolle-bar--------- */}
       <div>
-        <ul className={`md:flex justify-center absolute left-[50%] px-12 pb-4 ease-in duration-300 ${open? 'top-[-120px] ': 'top-6 w-ful'}  md:static bg-slate-300`}>
+        <ul className={`md:flex justify-center absolute left-[50%] px-[17px] pb-4 ease-in duration-300 ${open? 'top-[-120px] ': 'top-6 '}  md:static bg-slate-300`}>
           {
             navMenus.map(menu => <Nav key={menu.id} menus ={menu}/>)
           }
