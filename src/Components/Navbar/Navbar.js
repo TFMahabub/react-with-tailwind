@@ -12,13 +12,13 @@ const Navbar = () => {
     {id: 4, name: 'About Us', path:'/home'},
   ]
   return (
-    <nav className='text-center flex justify-between bg-slate-300 py-4 px-8'>
+    <nav className='text-center flex justify-between bg-slate-300 py-4 px-8 relative md:static'>
       {/* ----------logo---------- */}
       <div className=''>
         <h2 className='text-xl font-semibold'>This is Logo</h2>
       </div>
       {/*--------menus--------*/}
-      <ul className='md:flex justify-center'>
+      <ul className={`md:flex justify-center absolute left-[50%] px-12 pb-4 ease-in duration-300 ${open? 'top-[-120px] ': 'top-6 '}  md:static bg-slate-300`}>
         {
           navMenus.map(menu => <Nav key={menu.id} menus ={menu}/>)
         }
@@ -27,7 +27,8 @@ const Navbar = () => {
       <div className='md:hidden'>
         <button onClick={() => setOpen(!open)}>
           {
-            open? <Bars3Icon className="h-7 w-8"/>: <XMarkIcon className='h-7 w-7'/>
+            open? <Bars3Icon className="h-7 w-8"/>
+            : <XMarkIcon className='h-7 w-7'/>
           }
           </button>
         
